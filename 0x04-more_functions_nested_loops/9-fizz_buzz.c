@@ -1,4 +1,4 @@
-#include <stdio>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -13,18 +13,20 @@ int main(void)
 {
 	int n;
 
-	printf("1");
-	for (n = 2; n <=  100; n++)
+	for (n = 1; n <=  100; n++)
 	{
-		printf(" ");
 		if (n % 3 == 0)
 		{
 			printf("Fizz");
 		}
-		if (n % 5 == 0)
+		else if (n % 5 == 0)
 			printf("Buzz");
-		if (n % 3 != 0 && n % 5 != 0)
-			print("%d", n)
+		else if (n % 15 == 0)
+			printf("FizzBuzz");
+		else
+			printf("%n", n);
+		if (n < 100)
+			printf(" ");
 	}
 	printf("\n");
 	return (0);
