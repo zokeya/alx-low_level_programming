@@ -2,6 +2,7 @@
 
 /**
  * print_triangle - prints a triangle, followed by a new line
+ * Description: Prints diagonals
  * @size: size of the triangle
  * Return: void
 */
@@ -16,13 +17,13 @@ void print_triangle(int size)
 	}
 	else
 	{
-		for (row = 1; row <= size; row++)
+		for (r = 1; r <= size; r++)
 		{
-			for (spaces = size - row; spaces >= 1; spaces--)
+			for (s = size - r; s >= 1; s--)
 			{
 				_putchar(' ');
 			}
-			for (hashes = 1; hashes <= row; hashes++)
+			for (h = 1; h <= row; h++)
 			{
 				_putchar('#');
 			}
