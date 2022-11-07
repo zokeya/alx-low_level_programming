@@ -12,7 +12,7 @@ int factorial(int n)
 
 	if (n == 0)
 	{
-		return (i);
+		return (1);
 	}
 	else if (n < 0)
 	{
