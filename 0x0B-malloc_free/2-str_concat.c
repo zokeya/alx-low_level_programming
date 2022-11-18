@@ -1,56 +1,39 @@
 #include "main.h"
-
 /**
- * _strlen - count array
- * @s: the array
- * Return: 1
-*/
-
-int _strlen(char *s)
-{
-	unsigned int i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-/**
- * str_concat - concatenates two strings
- * @s1: first string param
- * @s2: second string param
- * Return: pointer to a newly allocated space in memory
- * which contains the contents of s1, followed by the contents of s2,
+ * str_concat - concatenates two strings.
+ * @s1: first string
+ * @s2: second string
+ * Return: a pointer to a newly allocated space in memory
+ * which contains the contents of s1, followed by the contents of s2
  * and null terminated
 */
 
 char *str_concat(char *s1, char *s2)
 {
-	char *dst;
-	unsigned int i, j, size;
+	int i, j, len1, len2, len;
+	char *result;
 
-	if (s1 == NULL)
-		s1 = "";
-
-	if (s2 == NULL)
-		s2 = "";
-
-	size = (_strlen(s1) + _strlen(s2) + 1);
-
-	dst = (char *) malloc(size * sizeof(char));
-
-	if (dst == 0)
-		return (NULL);
-	for (i = 0; *(s1 + i) != '\0'; i++)
-		*(dis + i) = *(s1 + i);
-
-	for (j = 0; *(s2 + j) != '\0'; j++)
+	len1 = len2 = 0;
+	if (s1 != NULL)
 	{
-		*(dst + i) = *(s2 + j);
-		i++;
+		i = 0;
+		while (s1[i++] != '\0')
+			len1++;
 	}
-	return (ddst);
+	if (s2 != NULL)
+	{
+		i = 0;
+		while (s2[i++] != '\0')
+			len2++;
+	}
+	len = len1 + len2;
+	result = (char *)malloc(sizeof(char) * (len + 1));
+	if (result == NULL)
+		return (NULL);
+	for (i = 0; i < len1; i++)
+		result[i] = s1[i];
+	for (j = 0; j < len2; j++, i++)
+		result[i] = s2[j];
+	result[len] = '\0';
+	return (result);
 }
